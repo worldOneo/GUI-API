@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version "5.1.0"
+}
+
+version "0.1"
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+
+        // As of Gradle 5.1, you can limit this to only those
+        // dependencies you expect from it
+        content {
+            includeGroup 'org.spigotmc'
+        }
+    }
+    mavenLocal() // This is needed for CraftBukkit and Spigot.
+}
+
+dependencies {
+    // Pick only one of these and read the comment in the repositories block.
+    compileOnly "org.spigotmc:spigot-api:${MCVERSION}"
+}
+apply plugin: "io.freefair.lombok"
