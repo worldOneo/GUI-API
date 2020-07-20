@@ -1,6 +1,7 @@
 package de.worldOneo.guiapi.widget;
 
 import de.worldOneo.guiapi.utils.Pair;
+import de.worldOneo.guiapi.utils.Utils;
 import de.worldOneo.guiapi.widgets.AbstractMultipartWidget;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +22,7 @@ public class MultipartPlaceHolder extends AbstractMultipartWidget {
 
     @Override
     public List<Pair<ItemStack, Integer>> render() {
-        ItemStack itemStack = new ItemStack(material);
+        ItemStack itemStack = Utils.createNamedItemStack(material, " ");
         return slots.stream()
                 .map(integer -> new Pair<>(itemStack, integer))
                 .collect(Collectors.toList());
