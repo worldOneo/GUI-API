@@ -4,7 +4,8 @@ import de.worldOneo.guiapi.GUIManager;
 import de.worldOneo.guiapi.utils.Pair;
 import de.worldOneo.guiapi.widgets.IMultipartWidget;
 import de.worldOneo.guiapi.widgets.IWidget;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -17,7 +18,8 @@ import java.util.HashMap;
 import java.util.List;
 
 @Accessors(chain = true)
-@Data
+@Getter
+@Setter
 public abstract class AbstractGUI implements IGUI {
     private String GUITitle = "Made by GUIAPI";
     private List<IWidget> widgets = new ArrayList<>();
@@ -67,10 +69,10 @@ public abstract class AbstractGUI implements IGUI {
         Pair<ItemStack, Integer> pair = new Pair<>(e.getCurrentItem(), e.getSlot());
         IWidget widget = pairWidgetHashMap.get(pair);
         IMultipartWidget multipartWidget = pairMultipartWidgetHashMap.get(pair);
-        if(multipartWidget != null){
+        if (multipartWidget != null) {
             multipartWidget.clickEvent(e);
         }
-        if(widget != null){
+        if (widget != null) {
             widget.clickEvent(e);
         }
     }

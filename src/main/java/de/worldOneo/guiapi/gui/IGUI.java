@@ -13,5 +13,6 @@ public interface IGUI {
     Inventory render();
 
     void addWidget(IWidget widget);
+
     void addWidget(IMultipartWidget multipartWidget);
 }

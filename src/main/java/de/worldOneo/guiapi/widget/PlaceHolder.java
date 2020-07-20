@@ -32,5 +32,6 @@ public class PlaceHolder extends AbstractWidget {
 
     @Override
     public void clickEvent(InventoryClickEvent e) {
+        e.setCancelled(true);
     }
 }

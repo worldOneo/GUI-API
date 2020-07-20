@@ -13,6 +13,7 @@ public abstract class AbstractButton extends AbstractWidget {
 
     @Override
     public void clickEvent(InventoryClickEvent e) {
+        e.setCancelled(true);
         inventoryClickEventConsumer.accept(e);
     }
 }

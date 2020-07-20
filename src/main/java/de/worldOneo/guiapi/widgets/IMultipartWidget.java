@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface IMultipartWidget {
     List<Pair<ItemStack, Integer>> render();
+
     void clickEvent(InventoryClickEvent e);
 }
