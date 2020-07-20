@@ -10,8 +10,7 @@ import org.bukkit.entity.Player;
 @Accessors(chain = true)
 @Getter
 @Setter
-public abstract class AbstractWidget implements IWidget {
-    private int slot;
+public abstract class AbstractMultipartWidget implements IMultipartWidget{
     private IGUI igui;
 
     public void addToGUI(IGUI igui) {

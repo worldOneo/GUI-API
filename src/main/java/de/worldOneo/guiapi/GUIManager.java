@@ -15,15 +15,15 @@ public class GUIManager {
     private static final GUIManager instance = new GUIManager();
     private final HashMap<Player, Pair<String, IGUI>> playerIGUIMap = new HashMap<>();
 
-    private GUIManager(){
+    private GUIManager() {
 
     }
 
-    public static GUIManager getInstance(){
+    public static GUIManager getInstance() {
         return instance;
     }
 
-    public void open(IGUI igui, Player player){
+    public void open(IGUI igui, Player player) {
         Inventory inventory = igui.render();
         String title = igui.getGUITitle();
         title = generateID() + title;

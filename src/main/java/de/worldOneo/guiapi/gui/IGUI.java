@@ -1,6 +1,7 @@
 package de.worldOneo.guiapi.gui;
 
-import de.worldOneo.guiapi.widgets.Widget;
+import de.worldOneo.guiapi.widgets.IMultipartWidget;
+import de.worldOneo.guiapi.widgets.IWidget;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 
@@ -11,5 +12,6 @@ public interface IGUI {
 
     Inventory render();
 
-    void addWidget(Widget widget);
+    void addWidget(IWidget widget);
+    void addWidget(IMultipartWidget multipartWidget);
 }

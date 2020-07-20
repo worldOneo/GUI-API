@@ -1,5 +1,6 @@
-package de.worldOneo.guiapi.widgets;
+package de.worldOneo.guiapi.widget;
 
+import de.worldOneo.guiapi.widgets.AbstractButton;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;

@@ -1,6 +1,6 @@
-package de.worldOneo.guiapi.widgets;
+package de.worldOneo.guiapi.widget;
 
-import lombok.EqualsAndHashCode;
+import de.worldOneo.guiapi.widgets.AbstractButton;
 import lombok.Getter;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
