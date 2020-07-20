@@ -26,4 +26,7 @@ dependencies {
     // Pick only one of these and read the comment in the repositories block.
     compileOnly "org.spigotmc:spigot-api:${MCVERSION}"
 }
+jar {
+    archiveName("GUI-API.jar")
+}
 apply plugin: "io.freefair.lombok"
