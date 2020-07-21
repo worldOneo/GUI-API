@@ -1,8 +1,10 @@
 # GUI-API 1.8-1.16
+![Release](https://jitpack.io/v/worldOneo/GUI-API.svg)  
+[Jitpack](https://jitpack.io/#worldOneo/GUI-API)
 ### What is this?
 This API aims to create a GUI as easy as possible!
 ### How do I implement the API in my plugin?
-1) You can add the dependency to your development environment via [Jitpack](https://www.jitpack.io/).
+1) You can add the dependency to your development environment via [Jitpack](https://jitpack.io/#worldOneo/GUI-API).
 2) Add the GUI-API plugin to your server.
 ## Implementation
 This is a simple implementation with a Button and all other slots filled with glass panes:
