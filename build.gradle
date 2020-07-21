@@ -19,7 +19,6 @@ repositories {
     maven {
         url = "https://jitpack.io"
     }
-    mavenLocal() // This is needed for CraftBukkit and Spigot.
 }
 
 dependencies {
