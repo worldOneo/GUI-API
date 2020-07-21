@@ -3,7 +3,7 @@ plugins {
     id 'io.freefair.lombok' version "5.1.0"
 }
 
-version "0.1.0"
+version "${VERSION}"
 
 repositories {
     mavenCentral()
@@ -26,6 +26,14 @@ dependencies {
     // Pick only one of these and read the comment in the repositories block.
     compileOnly "org.spigotmc:spigot-api:${MCVERSION}"
 }
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        expand 'VERSION': version
+        include 'plugin.yml'
+    }
+}
+
 jar {
     archiveName("GUI-API.jar")
 }
