@@ -18,7 +18,11 @@ public class PlaceHolder extends AbstractWidget {
      */
     private Material material;
 
-
+    /**
+     * Render this widget
+     *
+     * @return the rendered widget as {@link ItemStack}
+     */
     @Override
     public ItemStack render() {
         ItemStack itemStack = new ItemStack(material);
@@ -28,11 +32,9 @@ public class PlaceHolder extends AbstractWidget {
         return itemStack;
     }
 
-    public PlaceHolder setMaterial(Material material) {
-        this.material = material;
-        return this;
-    }
-
+    /**
+     * This event is always just cancelled.
+     */
     @Override
     public void clickEvent(InventoryClickEvent e) {
         e.setCancelled(true);

@@ -32,12 +32,12 @@ public abstract class AbstractListWidget extends AbstractMultipartWidget {
     private List<ItemStack> itemStacks;
 
     /**
-     * The slot of the back arrow.
+     * The slot of the back arrow. (last page)
      */
     private Integer backSlot;
 
     /**
-     * The slot of the forward arrow.
+     * The slot of the forward arrow. (next page)
      */
     private Integer forwardSlot;
 

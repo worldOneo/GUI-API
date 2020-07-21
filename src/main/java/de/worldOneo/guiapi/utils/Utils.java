@@ -18,9 +18,8 @@ public class Utils {
     }
 
     /**
-     *
      * @param material the Material of the ItemStack
-     * @param name the name of the ItemStack
+     * @param name     the name of the ItemStack
      * @return the named ItemStack
      */
     public static ItemStack createNamedItemStack(Material material, String name) {

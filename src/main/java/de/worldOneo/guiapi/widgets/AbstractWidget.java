@@ -25,7 +25,14 @@ public abstract class AbstractWidget implements IWidget {
         this.setIgui(igui);
     }
 
+    /**
+     * Opens the {@link IGUI} of this IMultipartWidget if and only if the igui is set
+     *
+     * @param player The {@link Player} to open the {@link IGUI} for.
+     */
     protected void open(Player player) {
-        GUIManager.getInstance().open(getIgui(), player);
+        if (this.igui != null) {
+            GUIManager.getInstance().open(this.igui, player);
+        }
     }
 }
