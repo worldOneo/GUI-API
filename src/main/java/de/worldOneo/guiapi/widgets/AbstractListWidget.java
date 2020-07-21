@@ -21,11 +21,34 @@ import java.util.function.Consumer;
 @Getter
 @Setter
 public abstract class AbstractListWidget extends AbstractMultipartWidget {
+    /**
+     * The slots the {@link AbstractListWidget} is rendered on.
+     */
     private List<Integer> slots;
+
+    /**
+     * The {@link AbstractListWidget} of {@link ItemStack}s to list.
+     */
     private List<ItemStack> itemStacks;
+
+    /**
+     * The slot of the back arrow.
+     */
     private Integer backSlot;
+
+    /**
+     * The slot of the forward arrow.
+     */
     private Integer forwardSlot;
+
+    /**
+     * The Function which is called when an <b>other</b> item than the back and for arrows are clicked
+     *
+     * @param callback the function which is called with an {@link ItemStack}
+     * @return the function which is called as callback
+     */
     private Consumer<ItemStack> callback;
+
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
     private int index;
@@ -39,6 +62,11 @@ public abstract class AbstractListWidget extends AbstractMultipartWidget {
 
     }
 
+    /**
+     * Render the {@link AbstractListWidget}
+     *
+     * @return returns the rendered {@link AbstractListWidget}
+     */
     @Override
     public List<Pair<ItemStack, Integer>> render() {
         List<Pair<ItemStack, Integer>> pairList = new ArrayList<>();
@@ -59,6 +87,10 @@ public abstract class AbstractListWidget extends AbstractMultipartWidget {
         return pairList;
     }
 
+
+    /**
+     * @param e The {@link InventoryClickEvent} to handle
+     */
     @Override
     public void clickEvent(InventoryClickEvent e) {
         if (e.getCurrentItem() == null) {

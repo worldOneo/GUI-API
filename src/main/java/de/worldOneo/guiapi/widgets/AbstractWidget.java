@@ -14,6 +14,12 @@ public abstract class AbstractWidget implements IWidget {
     private int slot;
     private IGUI igui;
 
+
+    /**
+     * This function is used to support {@link AbstractWidget#open(Player)}
+     *
+     * @param igui the GUI to add this Widget to
+     */
     public void addToGUI(IGUI igui) {
         igui.addWidget(this);
         this.setIgui(igui);

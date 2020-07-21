@@ -11,6 +11,11 @@ public abstract class AbstractButton extends AbstractWidget {
         this.inventoryClickEventConsumer = inventoryClickEventConsumer;
     }
 
+    /**
+     * Call the function which the {@link AbstractButton} is initialized with.
+     *
+     * @param e the {@link InventoryClickEvent} to call the function with.
+     */
     @Override
     public void clickEvent(InventoryClickEvent e) {
         e.setCancelled(true);

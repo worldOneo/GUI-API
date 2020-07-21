@@ -2,6 +2,8 @@ package de.worldOneo.guiapi.gui;
 
 import de.worldOneo.guiapi.GUIManager;
 import de.worldOneo.guiapi.utils.Pair;
+import de.worldOneo.guiapi.widgets.AbstractMultipartWidget;
+import de.worldOneo.guiapi.widgets.AbstractWidget;
 import de.worldOneo.guiapi.widgets.IMultipartWidget;
 import de.worldOneo.guiapi.widgets.IWidget;
 import lombok.Getter;
@@ -28,10 +30,18 @@ public abstract class AbstractGUI implements IGUI {
     private HashMap<Pair<ItemStack, Integer>, IWidget> pairWidgetHashMap = new HashMap<>();
     private HashMap<Pair<ItemStack, Integer>, IMultipartWidget> pairMultipartWidgetHashMap = new HashMap<>();
 
+    /**
+     * Opens the GUI for the player
+     *
+     * @param player to open this GUI for
+     */
     public void open(Player player) {
         GUIManager.getInstance().open(this, player);
     }
 
+    /**
+     * @return returns the rendered Inventory from all widgets
+     */
     @Override
     public Inventory render() {
         Inventory inventory = Bukkit.createInventory(null, getSize(), getGUITitle());
@@ -51,15 +61,26 @@ public abstract class AbstractGUI implements IGUI {
         return inventory;
     }
 
+    /**
+     * It's recommended to use {@link AbstractWidget#setIgui(IGUI)} that the widgets can use AbstractWidget#open(Player);
+     *
+     * @param widget add a widget to this gui
+     */
     @Override
     public void addWidget(IWidget widget) {
         widgets.add(widget);
     }
 
+    /**
+     * It's recommended to use {@link AbstractMultipartWidget#setIgui(IGUI)} that the widgets can use AbstractMultipartWidget#open(Player);
+     *
+     * @param multipartWidget add a multipartWidget to this gui
+     */
     @Override
     public void addWidget(IMultipartWidget multipartWidget) {
         multipartWidgets.add(multipartWidget);
     }
+
 
     @Override
     public void clickEvent(InventoryClickEvent e) {

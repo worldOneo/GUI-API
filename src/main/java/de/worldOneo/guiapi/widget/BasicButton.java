@@ -2,15 +2,31 @@ package de.worldOneo.guiapi.widget;
 
 import de.worldOneo.guiapi.widgets.AbstractButton;
 import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Consumer;
 
+@Accessors(chain = true)
 public class BasicButton extends AbstractButton {
+    /**
+     * The ItemStack which will be displayed as button.
+     *
+     * @param displayItem The ItemStack to use as the button.
+     * @return the ItemStack used as the button.
+     */
     @Getter
+    @Setter
     private ItemStack displayItem;
 
+
+    /**
+     * Create a simple GUI-Button
+     *
+     * @param inventoryClickEventConsumer the function which is called when the Button is clicked
+     */
     BasicButton(Consumer<InventoryClickEvent> inventoryClickEventConsumer) {
         super(inventoryClickEventConsumer);
     }
@@ -18,10 +34,5 @@ public class BasicButton extends AbstractButton {
     @Override
     public ItemStack render() {
         return getDisplayItem();
-    }
-
-    public BasicButton setDisplayItem(ItemStack displayItem) {
-        this.displayItem = displayItem;
-        return this;
     }
 }
