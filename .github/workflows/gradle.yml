@@ -29,7 +29,9 @@ jobs:
     
     #Build the Jar
     - name: Build with Gradle
-      run: ./gradlew build
+      run: |
+          chmod +x ./gradlew
+          ./gradlew build
     
     #Create a Realease
     - name: Create Release
